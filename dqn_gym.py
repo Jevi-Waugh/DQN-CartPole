@@ -1,6 +1,6 @@
 import argparse
 import os
-
+from utils.plottings import plotting_rewards
 import gymnasium as gym
 import math
 import numpy as np
@@ -203,6 +203,8 @@ while True:
         if not os.path.exists(params['save_path']):
             os.makedirs(params['save_path'])
         torch.save(net.state_dict(), os.path.join(params['save_path'], name))
+        
+        plotting_rewards(all_rewards)
 
         break
 
