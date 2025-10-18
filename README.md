@@ -18,14 +18,14 @@ The DQN (Deep Q-Network) algorithm is a reinforcement learning method designed t
 
 - **Q-Learning**: The algorithm uses a function $Q^*(s, a)$ to estimate the expected return of taking action $s$ in state $s$. The optimal policy is derived as:
 
-  $\pi^*(s) = \arg\max_a Q^*(s, a)$
+  $\pi^*(s)$ = $\arg\max_a$ $Q^*(s, a)$
 
 - **Bellman Equation**: The $Q$-function satisfies the Bellman equation:
 
-  $Q_\pi(s, a) = r + \gamma Q_\pi(s', \pi(s'))$
+  $Q_\pi(s, a)$ = $r$ + $\gamma$ $Q_\pi$ $(s', \pi(s'))$
 - **Temporal Difference Error**: The difference between the predicted $Q$-value and the target $Q$-value is:
 
-  $\delta = Q(s, a) - \left(r + \gamma \max_{a'} Q(s', a')\right)$
+  $\delta$ = $Q(s, a)$ - $\left(r + \gamma \max_{a'} Q(s', a')\right)$
 
 - **Loss Function**: The Huber loss is used to minimize the temporal difference error, making the training robust to outliers:
 
